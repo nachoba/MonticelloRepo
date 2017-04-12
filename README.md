@@ -1,4 +1,4 @@
-![balloon](/Users/nacho/Public/MonticelloRepo/images/balloon.png)
+![balloon](/images/balloon.png)
 
 # Monticello Repository
 
