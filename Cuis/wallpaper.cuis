@@ -1,0 +1,9 @@
+Loading an Image and Setting it as a Wallpaper
+----------------------------------------------------------
+
+| filename | 
+	filename _ '/Users/nacho/Documents/Cuis/pixelart03.jpg' asFileEntry fileContents. 
+	self runningWorld backgroundImageData: (filename asByteArray).
+
+Remeber that 'filename' must be a valid name.
+
