@@ -10,40 +10,20 @@ TextEditor >> saveContents
 	(fileName asString) asFileEntry fileContents: (currentText asString).
 	
 
-Then append the following to the class method #initializeMenu
+Then append the following to the method #getMeny
 
 
 TextEditor class >> initializeMenu
-	menu _ SelectionMenu fromArray: {
-		{'Help...'.							#openHelp}.
-		#-.
-		{'Find...(f)'.						#find}.
-		{'Find Again (g)'.					#findAgain}.
-		{'Use Selection for Find (j)'.	#setSearchString}.
-		#-.
-		{'Undo - multiple (z)'.			#undo}.
-		{'Redo - multiple (Z)'.			#redo}.
-		{'Undo / Redo history'.			#offerUndoHistory}.
-		#-.
-		{'Copy (c)'.						#copySelection}.
-		{'Cut (x)'.							#cut}.
-		{'Paste (v)'.						#paste}.
-		{'Paste without Format'.			#pasteString}.
-		{'Paste...'.						#pasteRecent}.
-		#-.
-		{'Toggle WordWrap'.			#wrapOnOff}.
-		{'Set Font... (k)'.					#offerFontMenu}.
-		{'Clear Font'.						#clearFont}.
-		{'Set Default Font...'.			#offerDefaultFontMenu}.
-		{'Set Alignment...'.				#chooseAlignment}.
-		{'Save Contents... '.				#saveContents}.
-	}
+ 	...
+	...
+			{
+				#label        	 	->		'Save Contents...'.
+				#selector  		->		#saveContents.
+				#icon 			-> 		#saveIcon
+			} asDictionary.
 
 
-Finally, to have the Save Contents option show an icon add the following class method:
 
-TextEditor class >> addBasicIconsTo: aCollectorCollection
-	aCollectorCollection add: #('Save Contents... ') -> #saveIcon
 
 
 That will add a contextual option to the TextEditor, allowing you to save the contents. In case the icon does not show up, evaluate the following:
